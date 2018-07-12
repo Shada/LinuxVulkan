@@ -34,8 +34,8 @@ xcb_window_handler::xcb_window_handler(xcb_window_handler&& other)
       atom_wm_delete_window(other.atom_wm_delete_window),
       width(other.width),
       height(other.height),
-      quit(false),
-      pause(false)
+      pause(false),
+      quit(false)
 {
   other.connection = nullptr;
   other.screen = nullptr;

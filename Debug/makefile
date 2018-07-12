@@ -38,10 +38,7 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: pre-build main-build
-
-# Main-build Target
-main-build: TOBIVULKAN
+all: TOBIVULKAN
 
 # Tool invocations
 TOBIVULKAN: $(OBJS) $(USER_OBJS)
@@ -56,11 +53,7 @@ clean:
 	-$(RM) $(CC_DEPS)$(C++_DEPS)$(EXECUTABLES)$(OBJS)$(C_UPPER_DEPS)$(CXX_DEPS)$(C_DEPS)$(CPP_DEPS) TOBIVULKAN
 	-@echo ' '
 
-pre-build:
-	-../../../Programming/VulkanSDK/1.1.73.0/x86_64/bin/glslangValidator -V ../shaders/shader.vert
-	-@echo ' '
-
 .PHONY: all clean dependents
-.SECONDARY: main-build pre-build
+.SECONDARY:
 
 -include ../makefile.targets
